@@ -14,13 +14,22 @@ class Comics extends BaseController
 
   public function index()
   {
-    $comics = $this->comicsModel->findAll();
 
     $data = [
       'title' => 'Daftar Komik',
-      'comics' => $comics
+      'comics' => $this->comicsModel->getComics()
     ];
 
     return view('comics/index', $data);
+  }
+
+  public function detail($slug)
+  {
+    $data = [
+      'title' => 'Detail Komik',
+      'comic' => $this->comicsModel->getComics($slug)
+    ];
+
+    return view('/comics/detail', $data);
   }
 }

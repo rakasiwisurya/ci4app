@@ -26,7 +26,7 @@
               <td><?= $comic['author']; ?></td>
               <td><?= $comic['publisher']; ?></td>
               <td>
-                <a href="#" class="btn btn-info">Detail</a>
+                <a href="/comics/<?= $comic['slug']; ?>" class="btn btn-info">Detail</a>
               </td>
             </tr>
           <?php endforeach; ?>
